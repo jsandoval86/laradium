@@ -19,7 +19,7 @@ class CreateTablePost extends Migration
 			Schema::create('post', function (Blueprint $table) {
 				$table->increments('id');
 				$table->string('title', 50);
-				$table->string('text');
+				$table->text('text');
 				$table->timestamps();
 				$table->integer('author_id')->unsigned();
 			});

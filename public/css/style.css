@@ -1,0 +1,25 @@
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.nav-bar {
+	height: 50px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: gainsboro;
+	margin-bottom: 50px;
+}
+
+.helper-text {
+	text-align: center;
+	font-size: 19px;
+	font-style: italic;
+}
+
+.controls-post {
+	text-align: center;
+}
