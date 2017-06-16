@@ -13,7 +13,7 @@
 
 /** Post **/
 // post list
-Route::get('/post', 'PostController@listView')
+Route::get('/', 'PostController@listView')
 	->name('post_list');
 // render create view post
 Route::get('/post-add', 'PostController@createView')
@@ -25,3 +25,8 @@ Route::get('/post/{id}', 'PostController@detailView')
 Route::post('/post', 'PostController@create')
 	->name('post_create');
 /** Post **/
+
+/* Comments */
+Route::post('/post/{id}/comment', 'CommentController@create')
+	->name('comment_create');
+/* Comments */

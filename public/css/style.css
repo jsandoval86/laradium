@@ -1,3 +1,14 @@
+
+.action-btn {
+	color: #02b875 !important;
+	font-size: 20px !important;
+}
+
+.action-btn:hover{
+	background-color: #02b875 !important;
+	color: white !important;
+}
+
 .right {
 	text-align: right;
 }
@@ -6,12 +17,9 @@
 	text-align: center;
 }
 
-.nav-bar {
-	height: 50px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	background: gainsboro;
-	margin-bottom: 50px;
+.navbar {
+	padding-top: 8px;
+	height: 58px !important;
 }
 
 .helper-text {
@@ -22,4 +30,156 @@
 
 .controls-post {
 	text-align: center;
+}
+
+.welcome-wrapper {
+	margin-top: 50px;
+	padding: 50px 0px;
+	background: #f5f5f5;
+	border-bottom: 1px solid gainsboro;
+}
+
+.welcome-title h1{
+	font-size: 50px;
+}
+
+.post-wrapper {
+	padding-top: 40px;
+	background-color: #fafafa;
+}
+
+.post-item {
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.post-item-img {
+	width: 100%;
+	height: 150px;
+}
+
+.post-title {
+	font-weight: bold;
+}
+
+.post-title a {
+	color: black !important;
+}
+
+.post-description {
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+.post-author {
+	border-radius: 100px;
+}
+
+.comment-user-wrapper {
+
+}
+
+.post-author-wrapper {
+	padding-left: 0px !important;
+}
+
+.pocolor: #02b875;st-author-name {
+	color: #02b875;
+}
+
+.post-date {
+	font-size: 12px;
+}
+
+.post-write-content{
+	margin-top: 100px;
+}
+
+.post-write-author {
+	border-color: transparent !important;
+}
+
+.post-write-title {
+	border-color: transparent !important;
+	font-size: 35px !important;
+	height: 60px !important;
+}
+
+.post-write-text {
+	border-color: transparent !important;
+	font-size: 20px !important;
+}
+
+.post-write-wrapper {
+	padding-left: 150px !important;
+	padding-right: 150px !important;
+}
+
+.post-detail-wrapper {
+	margin-top: 100px;
+	padding-left: 150px !important;
+	padding-right: 100px !important;
+	border-bottom: 1px solid gainsboro;
+}
+
+.post-detail-title {
+	font-size: 45px;
+}
+
+.post-detail-text {
+	font-size: 20px;
+}
+
+.post-detail-text-wrapper {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.post-recommended-wrapper {
+	background-color: #f5f5f5;
+	padding: 20px 0px;
+}
+
+.comments-wrapper {
+	padding: 50px 10px;
+	background-color: #f5f5f5;
+}
+
+.comments-content {
+	padding-left: 150px !important;
+	padding-right: 150px !important;
+}
+
+.comment-detail-wrapper {
+	background-color: #f5f5f5;
+	padding: 20px 0px;
+}
+
+.comment-detail-content {
+	padding-left: 150px !important;
+	padding-right: 150px !important;
+}
+
+.comment-item {
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 15px;
+	border: 1px solid gainsboro;
+}
+
+.comment-user {
+	border-radius: 100px;
+}
+
+.comment-user-wrapper {
+	padding-left: 0px !important;
+	margin-bottom: 20px
+}
+
+.comment-user-name {
+	color: #02b875;
+}
+
+.comment-date {
+	font-size: 12px;
 }

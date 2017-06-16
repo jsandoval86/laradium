@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
+use App\Comment;
 use Exception;
 
 class PostController extends Controller
@@ -89,10 +90,26 @@ class PostController extends Controller
 
 	public function detailView(Request $request, $id) {
 
+
 		// find post
 		$post = Post::find($id);
+		// post recomended
+		$postRecomended = Post::whereNotIn('id', [$post->id])
+												->limit(3)
+												->get();
+
+		// comments
+		$comments = Comment::where('post_id', '=', $post->id)
+									->orderBy('created_at', 'desc')
+									->get();
+
 		// response
-		return $post;
+		return view('post_detail', [
+			'comments' => $comments,
+			'post' => $post,
+			'post_recommended' => $postRecomended
+		]);
+
 	}
 
 }

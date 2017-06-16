@@ -11,4 +11,11 @@ class Post extends Model
 	*/
 	protected $table = 'post';
 
+	/**
+	* author relation
+	*/
+	public function author(){
+		return $this->belongsTo('App\Author');
+	}
+
 }
