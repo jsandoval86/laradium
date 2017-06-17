@@ -20,6 +20,7 @@ class CreateTablePost extends Migration
 				$table->increments('id');
 				$table->string('title', 50);
 				$table->text('text');
+				$table->integer('likes')->default(0);
 				$table->timestamps();
 				$table->integer('author_id')->unsigned();
 			});

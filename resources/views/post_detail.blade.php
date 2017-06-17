@@ -33,6 +33,13 @@
 		<div class="row post-detail-text-wrapper">
 			<p class="post-detail-text">{{$post->text}}</p>
 		</div>
+
+		<div class="row post-actions">
+			<a href="javascript:void(0)" class="like" data-id="{{$post->id}}">
+										Like {{$post->likes}}
+									</a>
+		</div>
+
 	</div>
 
 	<div class="post-recommended-wrapper">
@@ -50,9 +57,14 @@
 								<div class="col-md-2">
 									<img src="https://cdn-images-1.medium.com/fit/c/40/40/	0*WgY9B-Lm4DnCEHlO.jpeg" class="post-author">
 								</div>
-								<div class="col-md-10 post-author-wrapper">
+								<div class="col-md-6 post-author-wrapper">
 									<span class="post-author-name">{{$post_recommend->author->name}}</span><br>
 									<span class="post-date text-muted">{{$post_recommend->created_at->diffForHumans()}}</span>
+								</div>
+								<div class="col-md-4">
+									<a href="javascript:void(0)" class="like" data-id="{{$post_recommend->id}}">
+										Like {{$post_recommend->likes}}
+									</a>
 								</div>
 							</div>
 						</div>

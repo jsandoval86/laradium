@@ -3,6 +3,8 @@
 <head>
 	<title>Laradium</title>
 	@yield('head')
+	<script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+	<script type="text/javascript" src="{{URL::asset('js/app.js')}}"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">

@@ -7,7 +7,7 @@
 @section('content')
 	<div class="welcome-wrapper">
 		<div class="container center welcome-title">
-			<h1>Welcome to Laradium</h1>
+			<h1 id="titleApp">Welcome to Laradium</h1>
 			<h2>Tell your Story! </h2>
 		</div>
 	</div>

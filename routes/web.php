@@ -24,6 +24,9 @@ Route::get('/post/{id}', 'PostController@detailView')
 // create post
 Route::post('/post', 'PostController@create')
 	->name('post_create');
+// likes button
+Route::post('/post/{id}/likes', 'PostController@likes')
+	->name('post_like');
 /** Post **/
 
 /* Comments */

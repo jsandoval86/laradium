@@ -8,6 +8,7 @@ use App\Post;
 use App\Author;
 use App\Comment;
 use Exception;
+use Pusher;
 
 class PostController extends Controller
 {
@@ -110,6 +111,46 @@ class PostController extends Controller
 			'post_recommended' => $postRecomended
 		]);
 
+	}
+ 
+	public function likes(Request $request, $id) {
+		
+		$post = Post::find($id);
+		$post->likes = $post->likes + 1;
+
+		// save
+		try{
+			$post->save();
+		}
+		catch(Exception $e) {
+			// logging 
+			Log::error($e->getMessage());
+			return response()->json([
+				'error' => 'Ocurrio un Error'
+			], 422);
+		}
+
+		$options = array(
+	    'cluster' => 'us2',
+	    'encrypted' => true
+	  );
+
+		// create pusher
+		$pusher = new Pusher(
+			'f127bb14a529d11fd35b',
+			'a81fe89d136ecde24154',
+			'354325',
+			$options
+		);
+
+		// send push notification
+		$data['message'] = 'El Post '. $post->title .' ha sumado un like';
+		$pusher->trigger('laradium', 'like', $data);
+
+		// response
+		return response()->json([
+			'post' => $post
+		]);
 	}
 
 }
