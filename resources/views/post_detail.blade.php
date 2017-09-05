@@ -77,28 +77,28 @@
 	<div class="comments-wrapper">
 		<div id="commentSection" class="container comments-content">
 
-			@if(session('status_comment'))
-				<div class="alert alert-danger" role="alert">
-					{{session('status ')}}
-				</div>
-			@endif
-
-			@if(count($errors) > 0)
-				<div class="alert alert-danger" role="alert">
-					@foreach($errors->all() as $error)
-						- {{$error}} <br>
-					@endforeach
-				</div>
-			@endif
-
 			<form action="{{URL::route('comment_create', ['id' => $post->id])}}" method="POST">
 				{{csrf_field()}}
 				<label>Responses</label>
-				<div class="form-group">
+				<div class="form-group @if($errors->has('user_name')) has-error @endif">
 					<input type="text" name="user_name" class="form-control" placeholder="Your name" value="{{old('user_name')}}">
+					@if($errors->has('user_name'))
+						<span class="help-block">
+							@foreach($errors->get('user_name') as $error)
+								- {{$error}}
+							@endforeach
+						</span>
+					@endif
 				</div>
-				<div class="form-group">
+				<div class="form-group @if($errors->has('text')) has-error @endif">
 					<textarea rows="5" name="text" placeholder="Comment" class="form-control">{{old('text')}}</textarea>
+					@if($errors->has('text'))
+						<span class="help-block">
+							@foreach($errors->get('text') as $error)
+								- {{$error}}
+							@endforeach
+						</span>
+					@endif
 				</div>
 				<input type="submit" value="Save" class="btn action-btn">
 			</form>

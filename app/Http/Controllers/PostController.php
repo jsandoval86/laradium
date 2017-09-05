@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
 use App\Comment;
+use App\Http\Requests\CreatePostRequest;
+
 use Exception;
 use Pusher;
 
@@ -31,15 +33,7 @@ class PostController extends Controller
 		return view('post_create');
 	}
 
-	public function create(Request $request) {
-
-
-		// validate data
-		$this->validate($request, [
-			'author_name' => 'required',
-			'title' => 'required',
-			'text' => 'required'
-		]);
+	public function create(CreatePostRequest $request) {
 
 		// create author
 		$author = $this->createAuthor($request);

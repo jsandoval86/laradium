@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Comment;
+
 use Exception;
+use Validator;
 
 class CommentController extends Controller
 {
 
+	/**
+	* create comment from Post
+	* @param Request $request
+	* @param int $id
+	*/
 	public function create(Request $request, $id)
 	{
 
@@ -39,13 +46,24 @@ class CommentController extends Controller
 						->with('status_comment', 'Comentario guardado!');
 	}
 
+	/**
+	* validation create comment post
+	* @param Request $request
+	*/
 	private function validateToCreate(Request $request) {
 
-		// validation rules
-		$this->validate($request, [
+		// implement validator Facade
+		$validator = Validator::make($request->all(), [
 			'text' => 'required',
 			'user_name' => 'bail|nullable'
 		]);
+
+		// response
+		if ($validator->fails()) {
+			return back()
+				->withErrors($validator)
+				->withInput();
+		}
 
 	}
 
