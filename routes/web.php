@@ -33,3 +33,11 @@ Route::post('/post/{id}/likes', 'PostController@likes')
 Route::post('/post/{id}/comment', 'CommentController@create')
 	->name('comment_create');
 /* Comments */
+
+// auth routes
+Auth::routes();
+
+// log out
+Route::get('/logout', 'Auth\LoginController@logout')
+	->name('logout');
+
